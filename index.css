@@ -36,6 +36,14 @@ body {
 
 }
 
+main {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+  position: relative;
+  z-index: 2;
+}
+
 /* =========================
    TOP LEFT GLOW
 ========================= */
@@ -122,12 +130,13 @@ body::after {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    padding: 30px 70px;
-    margin-bottom: 50px;
+    gap: 24px;
+    padding: 18px 0;
+    margin-bottom: 34px;
 }
 .header-text{
     font-family: "Dancing Script", cursive;
-    font-size: 60px;
+    font-size: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,12 +158,12 @@ body::after {
     align-items: center;
     justify-content: space-between;
 
-    gap: 28px;
+    gap: 18px;
 
     width: fit-content;
 
     padding:
-        18px 28px;
+        12px 20px;
 
     border-radius: 999px;
 
@@ -181,13 +190,13 @@ body::after {
     display: flex;
     align-items: center;
 
-    gap: 18px;
+    gap: 12px;
 
 }
 
 .music-icon {
 
-    font-size: 28px;
+    font-size: 20px;
 
     color: #5C4338;
 
@@ -195,7 +204,7 @@ body::after {
 
 .lofi-text {
 
-    font-size: 28px;
+    font-size: 18px;
 
     font-weight: 500;
 
@@ -218,7 +227,7 @@ body::after {
 
     gap: 4px;
 
-    height: 28px;
+    height: 22px;
 
 }
 
@@ -298,17 +307,18 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 34px;
 }
-/* .content-1-left
+.content-1-left
 {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
     flex-shrink: 0;
-    position: relative;
-} */
+}
 .polaroid{
-    width: 500px;
+    width: 300px;
     position: relative;
     background: #F7F3EF;
     padding: 12px 12px 50px 12px;
@@ -335,7 +345,7 @@ body::after {
   position: absolute;
   bottom: -5px;
   right: 12px;
-  font-size: 50px;
+  font-size: 34px;
   color: #c4857a;
 }
 .quote-note{
@@ -350,29 +360,31 @@ body::after {
   );
     border-left: 3px solid #e8a0a0;
     padding: 14px 16px;
-    width: 350px;
+    width: 260px;
     transform: rotate(-1deg);
     position: relative;
 }
 .quote-note p{
     font-family: "Special Elite", system-ui;
-    font-size: 30px;
+    font-size: 18px;
 }
 .content-1-center{
-  width: 600px;
+  width: 220px;
+  flex-shrink: 0;
 }
 .content-1-center img{
   width: 100%;
 }
 .content-1-right{
-    /* flex: 1; */
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 28px;
+    max-width: 500px;
 }
 .content-1-right-text-1{
     font-optical-sizing: auto;
-    font-size: 80px;
+    font-size: 50px;
+    line-height: 1.05;
 }
 .content-1-right-text-1 p{
   font-family: "Cormorant Garamond", serif;
@@ -380,10 +392,10 @@ body::after {
 .contet-1-right-text-2{
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
-    font-size: 30px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 .content-1-right-text-2 p{
   font-family: "Poppins", sans-serif;
@@ -392,20 +404,20 @@ body::after {
 .open-qr-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background-color: #5c3d2e;
   color: #ffffff;
-  padding: 30px 70px;
+  padding: 14px 24px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 18px;
   font-family: sans-serif;
   letter-spacing: 0.3px;
 }
 .open-qr-btn svg {
-  width: 50px;
-  height: 50px;
+  width: 28px;
+  height: 28px;
   fill: none;
   stroke: #ffffff;
   stroke-width: 1.8;
@@ -429,7 +441,8 @@ body::after {
 .overlay-modal {
     position: relative;
     background: #fff;
-    padding: 150px;
+    width: min(680px, calc(100vw - 32px));
+    padding: 80px 56px 48px;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -450,7 +463,7 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
-    width: 500px; 
+    width: 240px; 
     pointer-events: none;
     z-index: 0;
 }
@@ -459,7 +472,7 @@ body::after {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 500px; 
+    width: 240px; 
     pointer-events: none;
     transform: rotate(180deg);
     z-index: 0;
@@ -476,11 +489,12 @@ body::after {
 }
 .overlay-content p-1{
   font-family: "Poppins", sans-serif;
-  font-size: 35px;
+  font-size: 28px;
 }
 .overlay-content p-2{
   font-family: "Poppins", sans-serif;
-  font-size: 35px;
+  font-size: 18px;
+  text-align: center;
 }
 .overlay-close {
     position: absolute;
@@ -488,14 +502,14 @@ body::after {
     right: 1px;
     background: none;
     border: none;
-    font-size: 50px;
+    font-size: 34px;
     cursor: pointer;
     color: #333;
 }
 
 .overlay-image img {
     display: block;
-    max-width: 20vw;
+    max-width: 220px;
     max-height: 80vh;
     border-radius: 8px;
 }
@@ -507,11 +521,11 @@ body::after {
 }
 .wrapper {
   display: inline-flex;
-  gap: 20px;
+  gap: 14px;
   list-style: none;
   height: auto;
   width: auto;
-  padding: 40px 0 0;
+  padding: 8px 0 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
   justify-content: flex-start;
@@ -522,9 +536,9 @@ body::after {
   background: #fff;
   border-radius: 50%;
   margin: 0;
-  width: 100px;
-  height: 100px;
-  font-size: 35px;
+  width: 54px;
+  height: 54px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -547,7 +561,7 @@ body::after {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font-size: 25px;
+  font-size: 14px;
   background: #fff;
   color: #fff;
   padding: 5px 8px;
@@ -571,7 +585,7 @@ body::after {
 }
 
 .wrapper .icon:hover .tooltip {
-  top: -45px;
+  top: -42px;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -791,7 +805,7 @@ body::after {
   bottom: 10px;
   right: 40px;
 
-  font-size: 130px;
+  font-size: 64px;
 
   color: #8B6254;
 
@@ -820,6 +834,8 @@ body::after {
     );
 
   overflow: hidden;
+
+  pointer-events: none;
 
   z-index: 0;
 
@@ -864,7 +880,106 @@ body::after {
 
 }
 
+@media (max-width: 1100px) {
+
+  main {
+    width: min(860px, calc(100% - 40px));
+  }
+
+  .content-1 {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .content-1-center {
+    order: 3;
+    width: 160px;
+  }
+
+  .content-1-right {
+    flex: 1 1 420px;
+  }
+
+}
+
 @media (max-width: 768px) {
+
+  main {
+    width: min(520px, calc(100% - 28px));
+    padding: 14px 0 48px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+
+  .header-text {
+    font-size: 36px;
+  }
+
+  .content-1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .content-1-left,
+  .content-1-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .polaroid {
+    width: min(300px, 100%);
+  }
+
+  .quote-note {
+    width: min(280px, 100%);
+  }
+
+  .content-1-center {
+    order: 0;
+    width: 120px;
+  }
+
+  .content-1-right {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .content-1-right-text-1 {
+    font-size: 40px;
+  }
+
+  .contet-1-right-text-2 {
+    font-size: 16px;
+  }
+
+  .qr-box,
+  .socials {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+
+  .overlay-modal {
+    padding: 72px 24px 36px;
+  }
+
+  .overlay-rose-tl,
+  .overlay-rose-br {
+    width: 160px;
+  }
+
+  .overlay-image img {
+    max-width: min(220px, 70vw);
+  }
 
   .bg-flower-left {
 
@@ -899,21 +1014,21 @@ body::after {
     .lofi-pill {
 
         padding:
-            14px 22px;
+            10px 16px;
 
-        gap: 20px;
+        gap: 14px;
 
     }
 
     .music-icon {
 
-        font-size: 22px;
+        font-size: 18px;
 
     }
 
     .lofi-text {
 
-        font-size: 22px;
+        font-size: 16px;
 
     }
 
