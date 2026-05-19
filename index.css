@@ -1048,16 +1048,23 @@ body::after {
 @media (max-width: 560px) {
 
   main {
-    width: min(100% - 22px, 420px);
+    width: min(420px, calc(100% - 22px));
   }
 
   .header {
-    justify-content: flex-start;
-    gap: clamp(24px, 10vw, 48px);
-    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
+    justify-content: initial;
+    align-items: center;
+    width: min(360px, calc(100vw - 32px));
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .header-text {
+    justify-content: flex-start;
     font-size: 21px;
     min-width: 0;
   }
@@ -1068,8 +1075,10 @@ body::after {
   }
 
   .lofi-pill {
+    justify-self: end;
     flex-shrink: 0;
     gap: 6px;
+    margin-left: 0;
     padding: 7px 8px;
   }
 
@@ -1116,7 +1125,7 @@ body::after {
 @media (max-width: 480px) {
 
   main {
-    width: min(100% - 22px, 420px);
+    width: min(420px, calc(100% - 22px));
   }
 
   .content-1 {
@@ -1183,11 +1192,12 @@ body::after {
 @media (max-width: 360px) {
 
   main {
-    width: min(100% - 16px, 340px);
+    width: min(340px, calc(100% - 16px));
   }
 
   .header {
     gap: 14px;
+    width: min(320px, calc(100vw - 24px));
   }
 
   .header-text {
