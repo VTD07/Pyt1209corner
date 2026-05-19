@@ -411,6 +411,7 @@ body::after {
 .open-qr-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background-color: #5c3d2e;
   color: #ffffff;
@@ -434,6 +435,9 @@ body::after {
 }
 .open-qr-btn p{
   font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
 }
 #overlay {
     display: none;
@@ -1388,8 +1392,9 @@ body::after {
   }
 
   .open-qr-btn {
-    width: 100%;
+    width: min(100%, 334px);
     min-height: 52px;
+    padding: 14px 18px;
   }
 
   .about-playing-section {
@@ -1510,6 +1515,13 @@ body::after {
 
   .quote-note p {
     font-size: 16px;
+  }
+
+  .open-qr-btn {
+    width: min(100%, 308px);
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 17px;
   }
 
 }
