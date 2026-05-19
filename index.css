@@ -751,11 +751,13 @@ body::after {
 }
 .gallery-wrapper {
   position: relative;
-  width: 100%;
+  width: min(100%, 1066px);
+  overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 16px;
+  margin: 0 auto;
 }
 .nav-btn {
   flex-shrink: 0;
@@ -782,19 +784,25 @@ body::after {
 .nav-btn:active {
   transform: scale(0.96);
 }
+.gallery-wrapper .nav-btn {
+  display: none;
+}
 .gallery-image {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 14px;
-  width: min(100%, 1066px);
+  width: max-content;
   flex: 0 0 auto;
-  overflow-x: auto;
+  overflow: hidden;
   scrollbar-width: none;          
   -ms-overflow-style: none;       
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: auto;
   padding: 6px 2px;
+  pointer-events: none;
+  user-select: none;
+  touch-action: none;
+  will-change: transform;
 }
 .gallery-image::-webkit-scrollbar {
   display: none;                 
@@ -805,13 +813,26 @@ body::after {
   object-fit: cover;
   border-radius: 10px;
   flex-shrink: 0;
-  scroll-snap-align: start;
   display: block;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .gallery-image img:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 28px rgba(100, 60, 60, 0.15);
+}
+
+.gallery-image.is-looping {
+  animation: galleryMarquee var(--gallery-loop-duration, 45s) linear infinite;
+}
+
+@keyframes galleryMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(var(--gallery-loop-distance, 0px) * -1), 0, 0);
+  }
 }
 /* =========================
    HEARTS
@@ -1103,7 +1124,7 @@ body::after {
     max-width: 760px;
   }
 
-  .gallery-image {
+  .gallery-wrapper {
     width: min(100%, 634px);
   }
 
@@ -1248,11 +1269,17 @@ body::after {
     padding-right: 0;
   }
 
+  .title {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
   .gallery-wrapper {
     gap: 12px;
   }
 
-  .gallery-image {
+  .gallery-wrapper {
     width: min(100%, 418px);
   }
 
@@ -1479,7 +1506,7 @@ body::after {
     height: 145px;
   }
 
-  .gallery-image {
+  .gallery-wrapper {
     width: min(100%, 202px);
   }
 
